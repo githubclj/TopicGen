@@ -23,9 +23,6 @@ def GetAllUrl(home):
     webpage_regex = re.compile(pattern1, re.IGNORECASE)
     print len(webpage_regex.findall(html))
     print webpage_regex.findall(html)
-
-
-    #
     # links = soup.find_all('a', href=re.compile(pattern))
     # for link in links :
     #     print link

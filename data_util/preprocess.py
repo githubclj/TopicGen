@@ -37,9 +37,12 @@ def transform_content_file(source_file, target_file):
     s_f = open(source_file, "r")
     t_f = open(target_file, 'w')
     lines = s_f.readlines()  # 读取全部内容
+    pre_content_list = []
     for line in lines:
         # print preprocess_for_content(line)
         t_f.write(preprocess_for_content(line) + "\n")
+        pre_content_list.append(preprocess_for_content(line))
+    return pre_content_list
     # return 0
 
 
@@ -51,11 +54,11 @@ def test_for_title():
 def test_for_content():
     source_file = "../data/raw_content.txt"
     target_file = "../data/content.txt"
-    transform_content_file(source_file=source_file, target_file=target_file)
+    return transform_content_file(source_file=source_file, target_file=target_file)
 
-if __name__=="__main__":
+# if __name__=="__main__":
     # str = '对话王劲：无人驾驶每asdfghj天能救500多条人命|AI英雄'
     # print preprocess_for_title(str)
     # test_for_title()
-    test_for_content()
+    # test_for_content()
 
